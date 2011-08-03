@@ -5,12 +5,16 @@ error_reporting(E_ALL | E_DEPRECATED);
 $handler = new ErrorExceptions\ErrorExceptions(E_ALL | E_DEPRECATED);
 $handler->register();
 
-$s = microtime(true);
 try {
     strpos('test', 'bar', 10);
 } catch (Exception $e) {
+    // Not executed, since it's an incidental error
     var_dump(get_class($e));
 }
-$e = microtime(true);
 
-echo "Completed in ". ($e - $s) . " Seconds\n";
+try {
+    fopen('bar.baz.biz', 'r');
+} catch (FileNotFoundException $e) {
+    // Caught it!
+    var_dump(get_class($e));
+}
