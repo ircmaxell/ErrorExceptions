@@ -101,7 +101,6 @@ ErrorExceptions::addMultipleCoreExceptions(array(
         '/Invalid callback/' => 'InvalidCallbackException',
         '/invalid date/'   => 'InvalidArgumentException',
         '/Invalid error type specified/' => 'DomainException',
-        '/Illegal offset type/' => 'DomainException',
         '/invalid parameter given for/i' => 'DomainException',
         '/Invalid scanner mode/' => 'DomainException',
         '/is no longer supported/' => 'DeprecatedException',
